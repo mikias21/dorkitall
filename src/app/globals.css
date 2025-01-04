@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.neon-text{
+	text-shadow: 0 0 5px #32cd32, 0 0 10px #32cd32, 0 0 20px #32cd32;
+}
+
+.custom-skeleton{
+	background: #f0f0f0;
+}
