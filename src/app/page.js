@@ -2,8 +2,6 @@ import {useSelector} from 'react-redux';
 import Head from 'next/head';
 import Header from '../Components/Header.jsx';
 import DomainInput from '../Components/DomainInput.jsx';
-import TagComponent from '../Components/TagComponent.jsx';
-import DorkerButton from '../Components/DorkerButton.jsx';
 
 export default function Home() {
   const tags = [
@@ -22,9 +20,6 @@ export default function Home() {
       <div className="min-h-screen flex flex-col">
         <Header />
         <DomainInput />
-      </div>
-      <div>
-        
       </div>
     </div>
 

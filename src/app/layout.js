@@ -5,6 +5,7 @@ import "./globals.css";
 import {Provider} from "react-redux";
 import {store} from "../store"
 import DarkModeToggle from '../Components/DarkModeToggle';
+import UserAccountButton from '../Components/UserAccountButton';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <DarkModeToggle />
+          <UserAccountButton />
           {children}
         </body>
       </html>
