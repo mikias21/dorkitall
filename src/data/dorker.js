@@ -7,6 +7,7 @@ const dork_data = [
     "tags": ["index", "personal", "files"],
     "description": "Searches for directories containing personal files.",
     "risk_level": "High",
+    "success_rate": "50.5%",
     "last_updated": "2024-12-18"
   },
   {
@@ -17,6 +18,7 @@ const dork_data = [
     "tags": ["index", "globals", "files"],
     "description": "Searches for exposed globals.inc files, which may contain sensitive configurations.",
     "risk_level": "High",
+    "success_rate": "50.5%",
     "last_updated": "2024-12-18"
   },
   {
@@ -27,6 +29,7 @@ const dork_data = [
     "tags": ["registry", "credentials", "files"],
     "description": "Finds Windows registry files containing default usernames and passwords.",
     "risk_level": "Critical",
+    "success_rate": "50.5%",
     "last_updated": "2024-12-18"
   },
   {
@@ -37,6 +40,7 @@ const dork_data = [
     "tags": ["login", "citrix", "metaframe"],
     "description": "Searches for exposed Citrix Metaframe XP login pages.",
     "risk_level": "Medium",
+    "success_rate": "50.5%",
     "last_updated": "2024-12-18"
   },
   {
@@ -47,6 +51,7 @@ const dork_data = [
     "tags": ["login", "webadmin"],
     "description": "Finds web administration login pages.",
     "risk_level": "Medium",
+    "success_rate": "50.5%",
     "last_updated": "2024-12-18"
   },
   {

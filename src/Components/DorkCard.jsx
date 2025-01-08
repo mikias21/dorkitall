@@ -31,19 +31,13 @@ const DorkCard = ({ dork }) => {
   }
 
   return (
-    <div className="border border-slate-200 w-2/4 p-3">
+    <div className="border border-slate-200 w-2/4 p-3 rounded-3xl">
       <p className="font-bold text-slate-600 text-xs dark:text-slate-300">{dork.query}</p>
       <p className="mt-2 text-xs dark:text-slate-300">{dork.description}</p>
-
-{/*      <div
-        className={`text-xs transition-all duration-500 ease-in-out dark:text-slate-300${
-          isOpen ? 'mt-2 max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}
-      >
-        <p className="dark:text-slate-300">Platform: {dork.platform}</p>
-        <p className={getRiskClasses(dork.risk_level)}>Risk: {dork.risk_level}</p>
-        <p className="dark:text-slate-300">Last updated date: {dork.last_updated}</p>
-      </div>*/}
+      {dork?.success_rate ? 
+        (<p className="mt-1 text-xs dark:text-slate-300">Success rate: {dork.success_rate}</p>) : 
+        (<p className="mt-1 text-xs dark:text-slate-300">Not Tested</p>)
+      }
 
       { isOpen && (
 
@@ -52,6 +46,14 @@ const DorkCard = ({ dork }) => {
         >
           <p className="dark:text-slate-300">Platform: {dork.platform}</p>
           <p className={getRiskClasses(dork.risk_level)}>Risk: {dork.risk_level}</p>
+          <div className='flex space-x-1'>
+            <p>Tags: </p>
+            {
+              dork?.tags.map((tag) => (
+                <p className='font-bold text-blue-500'>#{tag}</p>
+              ))
+            }
+          </div>
           <p className="dark:text-slate-300">Last updated date: {dork.last_updated}</p>
         </div>
 
@@ -71,17 +73,17 @@ const DorkCard = ({ dork }) => {
       </div>
 
       <ToastContainer
-		position="top-right"
-		autoClose={2500}
-		hideProgressBar={true}
-		newestOnTop={false}
-		closeOnClick={false}
-		rtl={false}
-		pauseOnFocusLoss={false}
-		draggable
-		pauseOnHover
-		theme="light"
-		/>
+    		position="top-right"
+    		autoClose={2500}
+    		hideProgressBar={true}
+    		newestOnTop={false}
+    		closeOnClick={false}
+    		rtl={false}
+    		pauseOnFocusLoss={false}
+    		draggable
+    		pauseOnHover
+    		theme="light"
+    	/>
     </div>
   );
 };
