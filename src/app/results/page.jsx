@@ -3,7 +3,6 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import {useEffect, useState} from "react";
-import {useRouter} from "next/navigation";
 import {useSelector} from "react-redux";
 import dork_data from "../../data/dorker.js";
 import DorkList from "../../Components/DorkList";
