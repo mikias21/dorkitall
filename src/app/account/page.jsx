@@ -2,13 +2,16 @@
 
 import {useState} from 'react';
 import {useRouter} from 'next/navigation';
+import {useDispatch} from 'react-redux';
+import {setUserName} from '../../store/userSlice';
 
 const Login = () => {
 
 	const [loading, setLoading] = useState(false);
 	const [noAccount, setNoAccount] = useState(false);
-	const [userName, setUserName] = useState();
+	const [userName, setUserNameValue] = useState();
 	const router = useRouter();
+	const dispatch = useDispatch();
 
 	const generateUserAccount = () => {
 		setLoading(true);
@@ -20,12 +23,13 @@ const Login = () => {
 				let index = Math.floor(Math.random() * (combinations.length - 1 - 0 + 1));
 				name += combinations[index];
 			}
-			setUserName(name);
+
+			setUserNameValue(name);
+			dispatch(setUserName(name));
 			setLoading(false);
 			setNoAccount(true);
 
 			setTimeout(() => {router.push('/');}, 2000);
-
 		}, 2000);
 	}
 
@@ -35,13 +39,13 @@ const Login = () => {
 				{noAccount ? 
 					(
 						<>
-							<p className="text-md text-slate-200">Account has been generated. Redirecting to home...</p>
-							<p className="text-sm mt-2 text-slate-200">Your username is <strong>{userName}</strong></p>
+							<p className="text-md dark:text-slate-200">Account has been generated. Redirecting to home...</p>
+							<p className="text-sm mt-2 dark:text-slate-200">Your username is <strong>{userName}</strong></p>
 						</>
 					) :
 					(
 						<>
-							<p className="text-lg font-semibold text-slate-200">Create account and become contributer</p>
+							<p className="text-lg font-semibold dark:text-slate-200">Create account and become contributer</p>
 							<button onClick={generateUserAccount} className="mt-5 w-44 bg-blue-500 p-3 text-white rounded-full">
 								{loading ? 
 									(	

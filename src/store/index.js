@@ -2,6 +2,7 @@ import {configureStore} from "@reduxjs/toolkit";
 import tagReducer from "./tagSlice";
 import domainReducer from "./domainSlice";
 import themeReducer from "./themeSlice";
+import userReducer from "./userSlice";
 import {saveToLocalStorage, loadFromLocalStorage} from '../utils/LocalStorage';
 
 const loadInitialState = () => {
@@ -9,7 +10,8 @@ const loadInitialState = () => {
 	return savedState || {
 		tag: {selectedTag: ""},
 		domain: {domain: ""},
-		theme: {isDarkMode: false}
+		theme: {isDarkMode: false},
+		user: {userName: ""},
 	};
 };
 
@@ -18,6 +20,7 @@ export const store = configureStore({
 		tag: tagReducer,
 		domain: domainReducer,
 		theme: themeReducer,
+		user: userReducer,
 	},
 	preloadedState: loadInitialState(),
 });
