@@ -34,10 +34,6 @@ const DorkCard = ({ dork }) => {
     <div className="border border-slate-200 w-2/4 p-3 rounded-3xl">
       <p className="font-bold text-slate-600 text-xs dark:text-slate-300">{dork.query}</p>
       <p className="mt-2 text-xs dark:text-slate-300">{dork.description}</p>
-      {dork?.success_rate ? 
-        (<p className="mt-1 text-xs dark:text-slate-300">Success rate: {dork.success_rate}</p>) : 
-        (<p className="mt-1 text-xs dark:text-slate-300">Not Tested</p>)
-      }
 
       { isOpen && (
 
