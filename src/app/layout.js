@@ -6,6 +6,7 @@ import {Provider} from "react-redux";
 import {store} from "../store"
 import DarkModeToggle from '../Components/DarkModeToggle';
 import UserAccountButton from '../Components/UserAccountButton';
+import {metadata} from "./metadata";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,12 +17,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// export const metadata = {
-//   title: "dorkitall",
-//   description: "Make dorking easy",
-// };
-
 
 export default function RootLayout({ children }) {
   return (
